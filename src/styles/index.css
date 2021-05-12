@@ -1,0 +1,52 @@
+:root {
+    --select-border: #777;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+}
+
+select#regions::marker {
+    display: none;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-regions-container {
+   position: relative;
+    width: 100%;
+    min-width: 15ch;
+    max-width: 25ch;
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    grid-template-areas: "select";
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+.select-regions-container::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: transparent;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    right: 25px;
+    transform: rotate(45deg);
+
+}
